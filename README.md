@@ -46,7 +46,7 @@ alias PROJECT-NAME="screen -S PROJECT-NAME"
 alias rePROJECT-NAME="screen -r PROJECT-NAME"
 ```
 
-To access the running server's REPL, type rePROJECT-NAME, and screen will open up in it's running state. To leave the screen session without logging out, type Ctrl + A. If a session is not currently running and you would like a new one, type PROJECT-NAME to open up a new screen session, cd into the hunchentoot directory, and run:
+To access the running server's REPL, type rePROJECT-NAME, and screen will open up in it's running state. To leave the screen session without logging out, type Ctrl + A then Ctrl + D. If a session is not currently running and you would like a new one, type PROJECT-NAME to open up a new screen session, cd into the hunchentoot directory, and run:
 ```shell
 sbcl --load init.lisp
 ```
