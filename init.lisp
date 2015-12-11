@@ -8,6 +8,9 @@
 
 (in-package :PROJECT-NAME)
 
+;; Needed if you set :error-template-directory in the easy-acceptor
+(setf hunchentoot::*show-lisp-errors-p* t)
+
 (defvar PROJECT-NAME-server
   (make-instance 'hunchentoot:easy-acceptor
                  :document-root "."

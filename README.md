@@ -3,8 +3,6 @@ Why To Use This
 
 This repository is a starting point for developers containing proper routes and mime types for /css, /js, and /images in static.lisp. The static.lisp file is loaded at the end of init.lisp.
 
-Note: error templates don't work yet. I'm still working out why.
-
 
 Linux Sysadmin Notes
 ====================
