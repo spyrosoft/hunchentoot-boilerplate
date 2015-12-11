@@ -38,6 +38,11 @@ screen_pid=`ps aux | grep $1 | grep SCREEN | awk '{print $2}'`
 kill $screen_pid
 ```
 
+Enable the service:
+```shell
+systemctl enable PROJECT.service
+```
+
 Now when you boot your server, your site should boot along with it. I also add the following to my user's shellrc:
 ```shell
 alias PROJECT-NAME="screen -S PROJECT-NAME"
