@@ -1,4 +1,5 @@
 (ql:quickload :hunchentoot)
+(ql:quickload :cl-who)
 
 (defpackage :PROJECT-NAME
   (:use :common-lisp
