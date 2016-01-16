@@ -16,8 +16,8 @@
   (make-instance 'hunchentoot:easy-acceptor
                  :document-root "."
                  :error-template-directory "static/error-templates/"
-                 :access-log-destination "../logs/access.log"
-                 :message-log-destination "../logs/error.log"
+                 :access-log-destination "logs/access.log"
+                 :message-log-destination "logs/error.log"
                  :port 8080))
 
 (load "static.lisp")
