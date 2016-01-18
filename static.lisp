@@ -1,54 +1,16 @@
-(defvar *this-file* #.(or *compile-file-pathname* *load-truename*))
-
-(defvar *hunchentoot-directory*
-  (pathname (directory-namestring *this-file*)))
+(load "routing.lisp")
 
 ;; Route / to index.html and serve it as text/html
-(push (create-static-file-dispatcher-and-handler
-       "/"
-       (merge-pathnames (make-pathname :directory '(:relative "static")
-                                       :name "index" :type "html"
-                                       :version nil :defaults *this-file*)
-                        *hunchentoot-directory*)
-       "text/html")
-      *dispatch-table*)
+(route-file "/" "/" "index" "html" "text/html")
 
-;; Route everything in /css/ to the static/css directory and serve it as text/html
-(push (create-folder-dispatcher-and-handler
-       "/css/"
-       (merge-pathnames (make-pathname :directory '(:relative "static/css")
-                                       :name nil :type nil
-                                       :version nil :defaults *this-file*)
-                        *hunchentoot-directory*)
-       "text/css")
-      *dispatch-table*)
+;; Route everything in /css/ to the /css directory and serve it as text/html
+(route-directory "/css/" "/css" "text/css")
 
-;; Route everything in /js/ to the static/css directory and serve it as text/javascript
-(push (create-folder-dispatcher-and-handler
-       "/js/"
-       (merge-pathnames (make-pathname :directory '(:relative "static/js")
-                                       :name nil :type nil
-                                       :version nil :defaults *this-file*)
-                        *hunchentoot-directory*)
-       "text/javascript")
-      *dispatch-table*)
+;; Route everything in /js/ to the /js directory and serve it as text/javascript
+(route-directory "/js/" "/js" "text/javascript")
 
-;; Route everything in /images/ to the static/images directory and serve it as whatever mime type is appropriate
-(push (create-folder-dispatcher-and-handler
-       "/images/"
-       (merge-pathnames (make-pathname :directory '(:relative "static/images")
-                                       :name nil :type nil
-                                       :version nil :defaults *this-file*)
-                        *hunchentoot-directory*)
-       nil)
-      *dispatch-table*)
+;; Route everything in /images/ to the /images directory and serve it as whatever mime type is appropriate
+(route-directory "/images/" "/images")
 
 ;; Route /robots.txt to the actual file and serve it as text/plain
-(push (create-static-file-dispatcher-and-handler
-       "/robots.txt"
-       (merge-pathnames (make-pathname :directory '(:relative "static")
-                                       :name "robots" :type "txt"
-                                       :version nil :defaults *this-file*)
-                        *hunchentoot-directory*)
-       "text/plain")
-      *dispatch-table*)
+(route-file "/robots.txt" "" "robots" "txt" "text/plain")
