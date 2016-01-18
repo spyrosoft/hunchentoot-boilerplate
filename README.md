@@ -38,6 +38,11 @@ screen_pid=`ps aux | grep $1 | grep SCREEN | awk '{print $2}'`
 kill $screen_pid
 ```
 
+You may also need to comment out the following line in /etc/sudoers using the visudo command:
+```conf
+Defaults   requiretty
+```
+
 Enable the service:
 ```shell
 systemctl enable PROJECT.service
@@ -54,3 +59,8 @@ To access the running server's REPL, type rePROJECT-NAME, and screen will open u
 sbcl --load init.lisp
 ```
 
+To install SBCL on CentOS:
+```shell
+yum install epel-release
+yum install sbcl
+```
