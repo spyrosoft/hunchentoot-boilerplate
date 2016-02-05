@@ -10,7 +10,7 @@
 
 (defvar PROJECT-NAME-server
   (make-instance 'hunchentoot:easy-acceptor
-                 :document-root "."
+                 :document-root "static"
                  :error-template-directory "static/error-templates/"
                  :access-log-destination "logs/access.log"
                  :message-log-destination "logs/error.log"
