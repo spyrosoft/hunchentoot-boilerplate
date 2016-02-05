@@ -13,4 +13,4 @@
 (route-directory "/images/" "/images")
 
 ;; Route /robots.txt to the actual file and serve it as text/plain
-(route-file "/robots.txt" "" "robots" "txt" "text/plain")
+(route-file "/robots.txt" "/" "robots" "txt" "text/plain")
