@@ -16,6 +16,6 @@
                  :message-log-destination "logs/error.log"
                  :port 8080))
 
-(load "routes.lisp.lisp")
+(load "routes.lisp")
 
 (hunchentoot:start PROJECT-NAME-server)
