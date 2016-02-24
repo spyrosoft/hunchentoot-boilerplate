@@ -1,5 +1,3 @@
-(defvar *this-file* #.(or *compile-file-pathname* *load-truename*))
-
 (defvar *hunchentoot-directory*
   (pathname (directory-namestring *this-file*)))
 

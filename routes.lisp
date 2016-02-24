@@ -1,3 +1,5 @@
+(defvar *this-file* #.(or *compile-file-pathname* *load-truename*))
+
 (load "utilities/routing.lisp")
 
 ;; Route / to index.html and serve it as text/html
