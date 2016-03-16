@@ -2,7 +2,6 @@
 
 ;; Route / to index.html and serve it as text/html
 (route-file "/" "/" "index" "html" "text/html")
-(route-file "/testing" "testing/" "a" "txt" "text/html")
 
 ;; Route everything in /css/ to the /css directory and serve it as text/html
 (route-directory "/css/" "css/" "text/css")
